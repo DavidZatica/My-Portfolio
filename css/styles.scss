@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Poppins', sans-serif;
+    //border: 1px greenyellow solid;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 9;
+
+    img {
+        display: block;
+        margin-left: 50%;
+        margin-right: 50%;
+        width: calc(20% + 50px);
+        transform: translateX(-50%) translateY(-50%);
+        margin-top: 50vh;
+    }
+
+    p {
+        display: block;
+        margin-left: 50vw;
+        margin-right: 50vw;
+        margin-top: -80px;
+        width: fit-content;
+        transform: translateX(-50%);
+    }
+}
+
+.none {
+    display: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 100px;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    padding-left: 100px;
+    padding-right: 100px;
+
+    background-color: black;
+    color: white;
+
+    z-index: 8;
+
+    position: sticky;
+
+    .header-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    
+        height: 100%;
+        width: fit-content;
+    
+        font-size: 20px;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    
+        height: 100%;
+        width: fit-content;
+    
+        font-size: 20px;
+
+        .items {
+            display: flex;
+            flex-direction: row;
+            
+            a {
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+#set-height {
+    display: block;
+}
+
+.container {
+    z-index: 1;
+    position: relative;
+
+    margin: 100px 25vw 100px 25vw;
+
+    font-size: xx-large;
+}
+
+.container:nth-child(2) {
+    height: 600px;
+}
+.container:nth-child(3) {
+    height: 600px;
+}
+.container:nth-child(4) {
+    height: 300px;
+}
+.container:nth-child(5) {
+    height: 300px;
+}
+.container:nth-child(6) {
+    height: 300px;
+}
+.container:nth-child(7) {
+    height: 300px;
+}
+.container:nth-child(8) {
+    height: 600px;
+}
+
+.content {
+    position: sticky;
+
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h1 {
+        font-weight: 400;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    a {
+        color: rgb(55, 55, 221);
+    }
+
+    a:visited {
+        color: rgb(6, 6, 120);
+    }
+}
+
+.hidden-gradient {
+    position: fixed;
+    top: 100px;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 7;
+    background: linear-gradient(white, white 15%, rgba(255, 255, 255, 0) 40%, white 60%, white);
+}
+
+//Portfolio Page
+
+.portfolio {
+    padding: 5vh 100px 5vh 100px;
+
+    h1 {
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: calc(100% + 5px);
+        font-weight: 300;
+    }
+    
+    section {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        display: grid;
+        grid-template-columns: 1fr 0.95fr;
+    }
+
+    .contact-me-message {
+        padding-top: 20px;
+
+        font-size: 20px;
+        font-weight: 300;
+
+        a {
+            text-decoration: underline;
+            color: blue;
+        }
+    }
+
+    .presentation {
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 15px;
+
+        padding-bottom: 2px; /*to stop display overflow from cutting off at the bottom*/
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        .work-container {
+            position: relative;
+
+            flex-shrink: 0;
+
+            margin-right: 50px;
+
+            height: 55vh;
+            width: 325px;
+
+            border-radius: 50px;
+
+            background-color: black;
+            color: white;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                opacity: 0.7;
+
+                object-fit: cover;
+
+                z-index: 0;
+
+                cursor: pointer;
+
+                border-radius: 50px;
+
+                transition: opacity 200ms;
+            }
+
+            img:hover {
+                opacity: 0.3;
+            }
+
+            .text {
+                position: absolute;
+
+                font-family: 'Poppins', sans-serif;
+                font-size: calc(100% - 2pt);
+
+                margin-left: 30px;
+                margin-right: 30px;
+
+                color: white;
+
+                bottom: 6%;
+            }
+        }
+
+        .moretocome {
+            background-color: rgb(40, 40, 40);
+
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-left {
+            img {
+                object-position: left;
+            }
+        }
+
+        .fit-center {
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-right {
+            img {
+                object-position: right;
+            }
+        }
+
+        .fit-top {
+            img {
+                object-position: top;
+            }
+        }
+
+        .swift-app {
+            width: 100%;
+        }
+    }
+
+    .presentation-grid-four {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 2vw;
+
+        margin-top: 15px;
+
+        padding-bottom: 2px; /*to stop display overflow from cutting off at the bottom*/
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        .work-container::before {
+            margin-top: 100%;
+        }
+
+        .work-container {
+            position: relative;
+
+            flex-shrink: 0;
+
+            margin-right: 50px;
+
+            width: 100%;
+
+            border-radius: 50px;
+
+            background-color: black;
+            color: white;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                opacity: 0.7;
+
+                object-fit: cover;
+
+                z-index: 0;
+
+                cursor: pointer;
+
+                border-radius: 50px;
+
+                transition: opacity 200ms;
+            }
+
+            img:hover {
+                opacity: 0.3;
+            }
+
+            .text {
+                position: absolute;
+
+                font-family: 'Poppins', sans-serif;
+                font-size: calc(100% - 2pt);
+
+                margin-left: 30px;
+                margin-right: 30px;
+
+                color: white;
+
+                bottom: 6%;
+            }
+        }
+
+        .moretocome {
+            background-color: rgb(40, 40, 40);
+
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-left {
+            img {
+                object-position: left;
+            }
+        }
+
+        .fit-center {
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-right {
+            img {
+                object-position: right;
+            }
+        }
+
+        .fit-top {
+            img {
+                object-position: top;
+            }
+        }
+
+        .swift-app {
+            width: 100%;
+        }
+    }
+
+    .presentation-grid-two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2vw;
+
+        width: 100%;
+
+        margin-top: 15px;
+
+        padding-bottom: 2px; /*to stop display overflow from cutting off at the bottom*/
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        .work-container {
+            position: relative;
+
+            flex-shrink: 0;
+
+            margin-right: 50px;
+
+            height: calc(0.5 * 30vh + 250px);
+            width: 100%;
+
+            border-radius: 50px;
+
+            background-color: black;
+            color: white;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                opacity: 0.7;
+
+                object-fit: cover;
+
+                z-index: 0;
+
+                cursor: pointer;
+
+                border-radius: 50px;
+
+                transition: opacity 200ms;
+            }
+
+            img:hover {
+                opacity: 0.3;
+            }
+
+            .text {
+                position: absolute;
+
+                font-family: 'Poppins', sans-serif;
+                font-size: calc(100% - 2pt);
+
+                margin-left: 30px;
+                margin-right: 30px;
+
+                color: white;
+
+                bottom: 6%;
+            }
+        }
+
+        .moretocome {
+            background-color: rgb(40, 40, 40);
+
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-left {
+            img {
+                object-position: left;
+            }
+        }
+
+        .fit-center {
+            img {
+                object-position: center;
+            }
+        }
+
+        .fit-right {
+            img {
+                object-position: right;
+            }
+        }
+
+        .fit-top {
+            img {
+                object-position: top;
+            }
+        }
+
+        .swift-app {
+            width: 100%;
+        }
+    }
+}
+
+.form {
+    margin: 5vh 100px 5vh 100px;
+
+    h1 {
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .form-input {
+        margin-top: 10px;
+    }
+
+    .input-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3vw;
+    }
+
+    .name-input {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        
+        width: calc(100% - 10px);
+        border: none;
+        background-color: rgb(200, 200, 200);
+
+        color: white;
+        font-size: 100%;
+    }
+
+    .email-input {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        
+        width: calc(100% - 10px);
+        border: none;
+        background-color: rgb(200, 200, 200);
+        
+        color: white;
+        font-size: 100%;
+    }
+
+    .message-input {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        
+        width: calc(100% - 10px);
+        height: 40vh;
+        border: none;
+        background-color: rgb(200, 200, 200);
+        
+        color: white;
+        font-size: 100%;
+    }
+
+    .subject-input {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        
+        width: calc(100% - 10px);
+        border: none;
+        background-color: rgb(200, 200, 200);
+        
+        color: white;
+        font-size: 100%;
+    }
+
+    .submit {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        
+        width: 100%;
+        height: 60px;
+
+        border: none;
+        background-color: rgb(170, 170, 170);
+
+        color: white;
+        font-weight: 600;
+        font-size: 100%;
+
+        margin-top: 30px;
+
+        transition: background-color 200ms;
+    }
+
+    .submit:hover {
+        content: "I'll get back to you as soon as possible!";
+        cursor: pointer;
+
+        background-color: rgb(130, 130, 130);
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+        .items {
+            font-size: 80%;
+            font-weight: 300;
+        }
+    }
+
+    .portfolio {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    .container {
+        margin-left: 10vw;
+
+        .content {
+            font-size: calc(100% - 10px);
+        }
+    }
+
+    .form {
+        margin-left: 10vw;
+        margin-right: 10vw;
+
+        .input-split {
+            column-gap: 6vw;
+        }
+    }
+}
+
+@media (max-height: 770px) {
+    .content {
+        top: 58%;
+    }
+
+    .hidden-gradient {
+        background: linear-gradient(white, white 10%, rgba(255, 255, 255, 0) 40%, white 70%, white);
+    }
+}
